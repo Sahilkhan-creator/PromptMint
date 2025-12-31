@@ -1,21 +1,23 @@
+// Get elements
 const generateBtn = document.getElementById('generateBtn');
-const output = document.getElementById('output');
-const userInput = document.getElementById('userInput');
-const styleSelect = document.getElementById('styleSelect');
-const platformSelect = document.getElementById('platformSelect');
-const qualitySelect = document.getElementById('qualitySelect');
+const userPrompt = document.getElementById('userPrompt');
+const purposeSelect = document.getElementById('purpose');
+const typeSelect = document.getElementById('type');
+const modelSelect = document.getElementById('model');
+const outputArea = document.getElementById('outputPrompt');
 
 generateBtn.addEventListener('click', () => {
-  let credits = parseInt(localStorage.getItem('credits') || '25');
-  if (credits < 1) {
-    alert("You don’t have enough credits! Watch an ad or upgrade your plan.");
-    return;
-  }
+    const prompt = userPrompt.value.trim();
+    const purpose = purposeSelect.value;
+    const type = typeSelect.value;
+    const model = modelSelect.value;
 
-  credits -= 1;
-  localStorage.setItem('credits', credits);
-  document.getElementById('creditsDisplay').textContent = credits;
+    if (!prompt) {
+        outputArea.value = "Please enter your image idea or bad prompt.";
+        return;
+    }
 
-  const prompt = `Create a ${qualitySelect.value} ${styleSelect.value} image on ${platformSelect.value} about "${userInput.value}"`;
-  output.value = prompt;
-});￼Enter
+    // Create a generated prompt
+    const generatedPrompt = `Prompt for ${model} | Purpose: ${purpose} | Type: ${type} | Idea: ${prompt}`;
+    outputArea.value = generatedPrompt;
+});
