@@ -1,119 +1,164 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f0f0ff;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background-color: #f3f0ff;
+    color: #333;
+}
+
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: #5c4fff;
-  color: white;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #5c4dff;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo {
-  font-size: 1.5em;
-  font-weight: bold;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-header .nav-icons span {
-  font-size: 1.5em;
-  margin-left: 20px;
-  cursor: pointer;
+header .menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
 }
 
-/* SIDEBAR */
+header .profile-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sidebar */
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 250px;
-  height: 100%;
-  background: #4b3fff;
-  color: white;
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #2c2a3f;
+    color: #fff;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 99;
 }
 
-.sidebar.active {
-  left: 0;
+.sidebar.open {
+    left: 0;
 }
 
-.sidebar #closeSidebar {
-  font-size: 2em;
-  cursor: pointer;
-  display: block;
-  text-align: right;
+.sidebar ul {
+    list-style: none;
 }
 
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
+.sidebar ul li {
+    padding: 15px 20px;
 }
 
-.sidebar nav ul li {
-  margin: 15px 0;
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s;
 }
 
-.sidebar nav ul li a {
-  color: white;
-  text-decoration: none;
+.sidebar ul li a:hover {
+    background-color: #5c4dff;
+    border-radius: 5px;
 }
 
-/* PROFILE POPUP */
-.profile-popup {
-  display: none;
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  background: white;
-  padding: 15px;
-  border: 1px solid #ccc;
-  z-index: 1002;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* MAIN CONTENT */
+/* Main Content */
 main {
-  padding: 100px 20px 50px;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 50px;
+main h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #5c4dff;
 }
 
-.main-buttons .btn {
-  display: inline-block;
-  padding: 10px 25px;
-  margin: 10px;
-  background: #5c4fff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+main p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
 }
 
-section.content {
-  background: white;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 900px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Buttons */
+button {
+    background-color: #5c4dff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.2s;
 }
 
+button:hover {
+    background-color: #4235c9;
+}
+
+/* Inputs and Textarea */
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 12px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+/* Sections Card */
+section.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 15px;
-  background: #222;
-  color: white;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #222;
+    color: #fff;
+    margin-top: 30px;
 }
+
+/* Responsive */
+@media(max-width:768px){
+    main {
+        padding: 20px 10px;
+    }
+
+    header .menu-toggle {
+        font-size: 1.8rem;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+  }
