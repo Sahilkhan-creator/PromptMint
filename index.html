@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PromptMint – Free Prompt Tools</title>
+  <title>PromptMint – Creative Prompts Generator</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="logo">PromptMint</div>
-  <div class="header-icons">
-    <button class="menu-toggle">☰</button>
-    <button class="profile-toggle">👤</button>
+  <h1 class="logo">PromptMint</h1>
+  <div class="header-buttons">
+    <span class="hamburger" id="hamburger">&#9776;</span>
+    <span class="profile-icon" id="profileIcon">&#128100;</span>
   </div>
 </header>
 
-<!-- Sidebar Menu -->
-<nav class="sidebar">
-  <button class="close-sidebar">×</button>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">&times;</button>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="generate.html">Generate Prompt</a></li>
@@ -27,53 +27,50 @@
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-</nav>
-
-<!-- Profile Sidebar -->
-<div class="profile-sidebar">
-  <button class="close-profile">×</button>
-  <p>Name: Guest User</p>
-  <p>Plan: Free</p>
-  <p>Credits: 25</p>
-  <button>Logout</button>
 </div>
 
-<main>
-  <section class="hero">
-    <h2>Generate & Fix Prompts Instantly</h2>
-    <p>Create high-quality prompts for AI tools and fix your existing prompts.</p>
-    <div class="buttons">
-      <a href="generate.html" class="tool-btn">Generate Prompt</a>
-      <a href="fix.html" class="tool-btn">Fix Prompt</a>
-    </div>
-  </section>
+<!-- Profile Panel -->
+<div class="profile-panel" id="profilePanel">
+  <p><strong>User:</strong> Demo User</p>
+  <p><strong>Credits:</strong> 25</p>
+  <p><strong>Email:</strong> demo@example.com</p>
+</div>
 
-  <!-- Additional content sections -->
-  <section class="features">
-    <h3>About Mint Prompt</h3>
-    <p>Use PromptMint to create AI prompts quickly and efficiently. Our system allows you to generate prompts based on purpose, type, and style.</p>
-  </section>
+<main class="hero">
+  <h2>Generate and Fix Creative Prompts Instantly</h2>
+  <p>Use PromptMint to create AI-ready prompts or improve your existing ones — free or with subscription!</p>
 
-  <section class="tutorials">
-    <h3>How It Works</h3>
-    <p>Select your prompt type, enter details, and get instant AI-ready prompts. You can also fix poorly written prompts easily.</p>
-  </section>
-
-  <section class="templates">
-    <h3>Prompt Templates</h3>
-    <p>Choose from pre-designed prompt templates to speed up your workflow.</p>
-  </section>
-
-  <section class="credits-system">
-    <h3>Credits & Free Usage</h3>
-    <p>Free users get 25 credits per month. Watch ads or subscribe to earn more credits.</p>
-  </section>
-
-  <section class="subscription">
-    <h3>Subscription Plans</h3>
-    <p>Upgrade to Basic or Advanced plans to get daily or weekly credits and unlock premium templates.</p>
-  </section>
+  <div class="hero-buttons">
+    <a href="generate.html" class="btn primary">Generate Prompt</a>
+    <a href="fix.html" class="btn secondary">Fix Prompt</a>
+  </div>
 </main>
+
+<!-- Content Sections -->
+<section class="content">
+  <h3>Why Choose PromptMint?</h3>
+  <p>PromptMint offers a simple, fast, and creative way to generate prompts for AI, writing, and design.</p>
+</section>
+
+<section class="content">
+  <h3>Free & Subscription Plans</h3>
+  <p>Free users get 25 credits. Earn more credits by watching ads or choose subscription for unlimited access.</p>
+</section>
+
+<section class="content">
+  <h3>Generate Prompts for Multiple Purposes</h3>
+  <p>Whether it's AI art, content creation, or brainstorming, PromptMint generates prompts tailored for your need.</p>
+</section>
+
+<section class="content">
+  <h3>Fix Your Prompts</h3>
+  <p>Improve clarity, grammar, and creativity of your existing prompts to get the best AI results.</p>
+</section>
+
+<section class="content">
+  <h3>Get Started Today</h3>
+  <p>Sign up, use your free credits, and explore the power of PromptMint!</p>
+</section>
 
 <footer>
   <p>© 2025 PromptMint. All rights reserved.</p>
@@ -81,4 +78,4 @@
 
 <script src="js/index.js"></script>
 </body>
-    </html>
+  </html>
