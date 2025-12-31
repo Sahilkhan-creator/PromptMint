@@ -1,59 +1,66 @@
-<!DO<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PromptMint – AI Prompt Tools</title>
-  <meta name="description" content="Generate, fix and explore AI prompts using a credit-based system.">
+  <title>PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
-  <div class="left">
-    <span class="menu-icon" onclick="toggleMenu()">☰</span>
-    <h1 class="logo">PromptMint</h1>
-  </div>
-
-  <div class="right">
-    <span id="creditText"></span>
-    <div class="profile" onclick="toggleProfile()">
-      👤
-    </div>
-  </div>
-</header>
-
-<!-- SIDE MENU -->
-<nav id="sideMenu" class="side-menu">
-  <a href="index.html">Home</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-</nav>
-
-<!-- PROFILE DROPDOWN -->
-<div id="profileBox" class="profile-box">
-  <p><strong>Name:</strong> Guest User</p>
-  <p><strong>Plan:</strong> Free</p>
-  <p><strong>Credits:</strong> <span id="profileCredits"></span></p>
-  <button onclick="logout()">Logout</button>
+<!-- =========================
+ ADD THIS ANYWHERE IN HEADER
+ (for credits display)
+========================= -->
+<div class="profile-bar">
+  Credits: <span id="creditCount">25</span>
 </div>
+<!-- ========================= -->
 
-<main class="hero">
-  <h2>Generate & Fix AI Prompts</h2>
-  <p>Credits-based prompt generator. No login required.</p>
+
+<!-- =========================
+ ADD THIS WHERE YOUR TOOL IS
+ (main content area)
+========================= -->
+<section class="prompt-tool">
+
+  <h2>Prompt Generator</h2>
+
+  <textarea id="ideaInput"
+    placeholder="Describe your image idea or paste a bad prompt..."></textarea>
+
+  <select id="style">
+    <option value="Realistic">Realistic</option>
+    <option value="Cinematic">Cinematic</option>
+    <option value="Anime">Anime</option>
+    <option value="3D">3D</option>
+  </select>
+
+  <select id="platform">
+    <option value="Midjourney">Midjourney</option>
+    <option value="DALL·E">DALL·E</option>
+    <option value="Stable Diffusion">Stable Diffusion</option>
+  </select>
+
+  <select id="quality">
+    <option value="Normal">Normal</option>
+    <option value="High">High</option>
+    <option value="Ultra">Ultra</option>
+  </select>
 
   <button onclick="generatePrompt()">Generate Prompt (1 Credit)</button>
   <button onclick="fixPrompt()">Fix Prompt (1 Credit)</button>
 
-  <div class="ad-box">
-    <p>No credits?</p>
-    <button onclick="watchAd()">🎥 Watch Ad → Get 3 Credits</button>
-  </div>
-</main>
+  <textarea id="outputBox"
+    placeholder="Generated / Fixed prompt will appear here..."
+    readonly></textarea>
 
+</section>
+<!-- ========================= -->
+
+
+<!-- ✅ REQUIRED: JS FILE -->
 <script src="js/app.js"></script>
+
 </body>
-</html>￼Enter<
+</html>
