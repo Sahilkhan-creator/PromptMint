@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generate Prompt - PromptMint</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Prompt – PromptMint</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Navbar -->
-<header>
-    <div class="logo">PromptMint</div>
-    <div class="menu-toggle" id="menuToggle">&#9776;</div>
-    <div class="profile-icon">&#128100;</div>
+
+<header class="topbar">
+  <h1 class="logo">PromptMint</h1>
+  <div class="header-buttons">
+    <span class="hamburger" id="hamburger">&#9776;</span>
+    <span class="profile-icon" id="profileIcon">&#128100;</span>
+  </div>
 </header>
 
 <!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="generate.html">Generate Prompt</a></li>
-        <li><a href="fix.html">Fix Prompt</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="generate.html">Generate Prompt</a></li>
+    <li><a href="fix.html">Fix Prompt</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-<!-- Main Content -->
-<main>
-    <h1>Generate Your AI Prompt</h1>
-    <p>Enter your image idea below and choose purpose, type, and AI model to generate a prompt.</p>
+<!-- Profile Panel -->
+<div class="profile-panel" id="profilePanel">
+  <p><strong>User:</strong> Demo User</p>
+  <p><strong>Credits:</strong> 25</p>
+  <p><strong>Email:</strong> demo@example.com</p>
+</div>
 
-    <input type="text" id="userPrompt" placeholder="Describe your image idea...">
-    <select id="purpose">
-        <option value="Artistic">Artistic</option>
-        <option value="Realistic">Realistic</option>
-    </select>
-    <select id="type">
-        <option value="Normal">Normal</option>
-        <option value="Detailed">Detailed</option>
-    </select>
-    <select id="model">
-        <option value="MidJourney">MidJourney</option>
-        <option value="DALLE">DALL·E</option>
-        <option value="StableDiffusion">Stable Diffusion</option>
-    </select>
+<main class="hero">
+  <h2>Generate Creative Prompts</h2>
+  <p>Type your idea and let PromptMint generate AI-ready prompts instantly.</p>
 
-    <button id="generateBtn">Generate Prompt</button>
-    <textarea id="outputPrompt" placeholder="Generated prompt will appear here..." readonly></textarea>
+  <div class="prompt-form">
+    <textarea id="userPrompt" placeholder="Enter your idea here..."></textarea>
+    <select id="promptPurpose">
+      <option value="ai-art">AI Art</option>
+      <option value="writing">Writing</option>
+      <option value="design">Design</option>
+      <option value="brainstorm">Brainstorming</option>
+    </select>
+    <button id="generateBtn" class="btn primary">Generate Prompt</button>
+    <div id="loading" class="loading">Generating...</div>
+    <div id="output" class="output"></div>
+  </div>
 </main>
 
+<footer>
+  <p>© 2025 PromptMint. All rights reserved.</p>
+</footer>
+
 <script src="js/generate.js"></script>
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('sidebar');
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
-</script>
 </body>
 </html>
