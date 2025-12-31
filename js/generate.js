@@ -1,23 +1,35 @@
-// Get elements
+// Sidebar & Profile
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const closeSidebar = document.getElementById('closeSidebar');
+const profileIcon = document.getElementById('profileIcon');
+const profilePanel = document.getElementById('profilePanel');
+
+hamburger.addEventListener('click', () => sidebar.classList.add('active'));
+closeSidebar.addEventListener('click', () => sidebar.classList.remove('active'));
+profileIcon.addEventListener('click', () => {
+  profilePanel.style.display = profilePanel.style.display === 'block' ? 'none' : 'block';
+});
+
+// Generate prompt logic
 const generateBtn = document.getElementById('generateBtn');
-const userPrompt = document.getElementById('userPrompt');
-const purposeSelect = document.getElementById('purpose');
-const typeSelect = document.getElementById('type');
-const modelSelect = document.getElementById('model');
-const outputArea = document.getElementById('outputPrompt');
+const loading = document.getElementById('loading');
+const output = document.getElementById('output');
 
 generateBtn.addEventListener('click', () => {
-    const prompt = userPrompt.value.trim();
-    const purpose = purposeSelect.value;
-    const type = typeSelect.value;
-    const model = modelSelect.value;
+  const userText = document.getElementById('userPrompt').value;
+  const purpose = document.getElementById('promptPurpose').value;
 
-    if (!prompt) {
-        outputArea.value = "Please enter your image idea or bad prompt.";
-        return;
-    }
+  if(!userText.trim()) {
+    output.innerHTML = "<p>Please enter a prompt idea!</p>";
+    return;
+  }
 
-    // Create a generated prompt
-    const generatedPrompt = `Prompt for ${model} | Purpose: ${purpose} | Type: ${type} | Idea: ${prompt}`;
-    outputArea.value = generatedPrompt;
+  loading.style.display = 'block';
+  output.innerHTML = '';
+
+  setTimeout(() => {
+    loading.style.display = 'none';
+    output.innerHTML = `<p><strong>Your generated prompt for ${purpose}:</strong> ${userText} [Enhanced and creative prompt here!]</p>`;
+  }, 1500);
 });
