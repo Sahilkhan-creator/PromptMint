@@ -3,81 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PromptMint</title>
+  <title>PromptMint – Free Prompt Tools</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/index.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">PromptMint</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    <div class="profile-icon"><i class="fas fa-user-circle"></i></div>
-  </header>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="generate.html">Generate Prompt</a></li>
-      <li><a href="fix.html">Fix Prompt</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms & Conditions</a></li>
-    </ul>
+<header class="topbar">
+  <div class="logo">PromptMint</div>
+  <div class="header-icons">
+    <button class="menu-toggle">☰</button>
+    <button class="profile-toggle">👤</button>
   </div>
+</header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Welcome to PromptMint</h1>
-    <p>Create or fix AI prompts for MidJourney, DALL·E, Stable Diffusion, and more!</p>
+<!-- Sidebar Menu -->
+<nav class="sidebar">
+  <button class="close-sidebar">×</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="generate.html">Generate Prompt</a></li>
+    <li><a href="fix.html">Fix Prompt</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="button-group" style="text-align:center;">
-      <button onclick="location.href='generate.html'">Generate Prompt</button>
-      <button onclick="location.href='fix.html'">Fix Prompt</button>
+<!-- Profile Sidebar -->
+<div class="profile-sidebar">
+  <button class="close-profile">×</button>
+  <p>Name: Guest User</p>
+  <p>Plan: Free</p>
+  <p>Credits: 25</p>
+  <button>Logout</button>
+</div>
+
+<main>
+  <section class="hero">
+    <h2>Generate & Fix Prompts Instantly</h2>
+    <p>Create high-quality prompts for AI tools and fix your existing prompts.</p>
+    <div class="buttons">
+      <a href="generate.html" class="tool-btn">Generate Prompt</a>
+      <a href="fix.html" class="tool-btn">Fix Prompt</a>
     </div>
+  </section>
 
-    <!-- Sections -->
-    <section class="card">
-      <h2>About PromptMint</h2>
-      <p>Use our free system to generate high-quality AI prompts or fix your existing ones. Free users get 25 credits, and you can earn more by watching ads or upgrading your plan.</p>
-    </section>
+  <!-- Additional content sections -->
+  <section class="features">
+    <h3>About Mint Prompt</h3>
+    <p>Use PromptMint to create AI prompts quickly and efficiently. Our system allows you to generate prompts based on purpose, type, and style.</p>
+  </section>
 
-    <section class="card">
-      <h2>How it Works</h2>
-      <p>Select a purpose, image type, and AI model to generate a perfect prompt instantly. Or fix an existing prompt for better results.</p>
-    </section>
+  <section class="tutorials">
+    <h3>How It Works</h3>
+    <p>Select your prompt type, enter details, and get instant AI-ready prompts. You can also fix poorly written prompts easily.</p>
+  </section>
 
-    <section class="card">
-      <h2>Features</h2>
-      <ul>
-        <li>100% Customizable prompts</li>
-        <li>Supports MidJourney, DALL·E, Stable Diffusion</li>
-        <li>Track your credits and usage</li>
-        <li>Free and paid plans</li>
-        <li>Access prompt templates for quick results</li>
-      </ul>
-    </section>
+  <section class="templates">
+    <h3>Prompt Templates</h3>
+    <p>Choose from pre-designed prompt templates to speed up your workflow.</p>
+  </section>
 
-    <section class="card">
-      <h2>Templates</h2>
-      <p>We provide prompt templates for all styles and purposes to get you started quickly.</p>
-    </section>
+  <section class="credits-system">
+    <h3>Credits & Free Usage</h3>
+    <p>Free users get 25 credits per month. Watch ads or subscribe to earn more credits.</p>
+  </section>
 
-    <section class="card">
-      <h2>Get Started</h2>
-      <p>Click Generate Prompt or Fix Prompt above to start creating AI prompts like a pro!</p>
-    </section>
-  </main>
+  <section class="subscription">
+    <h3>Subscription Plans</h3>
+    <p>Upgrade to Basic or Advanced plans to get daily or weekly credits and unlock premium templates.</p>
+  </section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 PromptMint. All rights reserved.
-  </footer>
+<footer>
+  <p>© 2025 PromptMint. All rights reserved.</p>
+</footer>
 
+<script src="js/index.js"></script>
 </body>
-          </html>
+    </html>
