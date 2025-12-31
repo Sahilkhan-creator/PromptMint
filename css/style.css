@@ -1,0 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #e6e0ff;
+  margin: 0;
+  padding: 20px;
+}
+
+.topbar {
+  background: #5b4fff;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 40px;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  background: #5b4fff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ad-box {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.links {
+  margin-top: 30px;
+}
+
+.pricing {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background: #0d1117;
+  color: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}￼Enter
+.left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.profile {
+  background: white;
+  color: #5b4fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background: #0d1117;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.side-menu.show {
+  left: 0;
+}
+
+/* PROFILE BOX */
+.profile-box {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.profile-box button {
+  width: 100%;
+  margin-top: 10px;
+  }
+.templates {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.template-card {
+  background: #0d1117;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.template-card h3 {
+  color: #5b4fff;
+}
+
+.template-card p {
+  color: #ccc;
+}
+
+.template-card button {
+  margin-top: 10px;
+  background: #5b4fff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  }
+
