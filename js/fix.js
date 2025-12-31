@@ -1,18 +1,23 @@
+// Get elements
 const fixBtn = document.getElementById('fixBtn');
 const badPrompt = document.getElementById('badPrompt');
-const fixedOutput = document.getElementById('fixedOutput');
+const fixPurpose = document.getElementById('fixPurpose');
+const fixType = document.getElementById('fixType');
+const fixModel = document.getElementById('fixModel');
+const fixedOutput = document.getElementById('fixedPrompt');
 
 fixBtn.addEventListener('click', () => {
-  let credits = parseInt(localStorage.getItem('credits') || '25');
-  if (credits < 1) {
-    alert("You don’t have enough credits! Watch an ad or upgrade your plan.");
-    return;
-  }
+    const prompt = badPrompt.value.trim();
+    const purpose = fixPurpose.value;
+    const type = fixType.value;
+    const model = fixModel.value;
 
-  credits -= 1;
-  localStorage.setItem('credits', credits);
-  document.getElementById('creditsDisplay').textContent = credits;
+    if (!prompt) {
+        fixedOutput.value = "Please enter a prompt to fix.";
+        return;
+    }
 
-  const fixedPrompt = `Optimized prompt: ${badPrompt.value} (improved for AI image generation)`;
-  fixedOutput.value = fixedPrompt;
-});￼Enter
+    // Create a fixed prompt
+    const fixedPrompt = `Fixed Prompt for ${model} | Purpose: ${purpose} | Type: ${type} | Original Idea: ${prompt}`;
+    fixedOutput.value = fixedPrompt;
+});
