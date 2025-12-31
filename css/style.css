@@ -176,3 +176,51 @@ footer {
   text-align: center;
   padding: 20px;
 }
+.prompt-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.prompt-form textarea {
+  width: 90%;
+  max-width: 700px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.prompt-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.loading {
+  display: none;
+  color: #5b4fff;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.output {
+  margin-top: 15px;
+  padding: 15px;
+  width: 90%;
+  max-width: 700px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  color: #333;
+}
