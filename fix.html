@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fix Prompt - PromptMint</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Prompt – PromptMint</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Navbar -->
-<header>
-    <div class="logo">PromptMint</div>
-    <div class="menu-toggle" id="menuToggle">&#9776;</div>
-    <div class="profile-icon">&#128100;</div>
+
+<header class="topbar">
+  <h1 class="logo">PromptMint</h1>
+  <div class="header-buttons">
+    <span class="hamburger" id="hamburger">&#9776;</span>
+    <span class="profile-icon" id="profileIcon">&#128100;</span>
+  </div>
 </header>
 
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="generate.html">Generate Prompt</a></li>
-        <li><a href="fix.html">Fix Prompt</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="generate.html">Generate Prompt</a></li>
+    <li><a href="fix.html">Fix Prompt</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-<!-- Main Content -->
-<main>
-    <h1>Fix Your Existing AI Prompt</h1>
-    <p>Enter your bad prompt below and choose purpose, type, and AI model to fix it.</p>
+<div class="profile-panel" id="profilePanel">
+  <p><strong>User:</strong> Demo User</p>
+  <p><strong>Credits:</strong> 25</p>
+  <p><strong>Email:</strong> demo@example.com</p>
+</div>
 
-    <input type="text" id="badPrompt" placeholder="Paste your bad prompt...">
-    <select id="fixPurpose">
-        <option value="Artistic">Artistic</option>
-        <option value="Realistic">Realistic</option>
-    </select>
-    <select id="fixType">
-        <option value="Normal">Normal</option>
-        <option value="Detailed">Detailed</option>
-    </select>
-    <select id="fixModel">
-        <option value="MidJourney">MidJourney</option>
-        <option value="DALLE">DALL·E</option>
-        <option value="StableDiffusion">Stable Diffusion</option>
-    </select>
+<main class="hero">
+  <h2>Fix Your Prompts</h2>
+  <p>Paste your existing prompt and let PromptMint improve it for clarity and creativity.</p>
 
-    <button id="fixBtn">Fix Prompt</button>
-    <textarea id="fixedPrompt" placeholder="Fixed prompt will appear here..." readonly></textarea>
+  <div class="prompt-form">
+    <textarea id="userFixPrompt" placeholder="Paste your prompt here..."></textarea>
+    <button id="fixBtn" class="btn primary">Fix Prompt</button>
+    <div id="loadingFix" class="loading">Fixing...</div>
+    <div id="outputFix" class="output"></div>
+  </div>
 </main>
 
+<footer>
+  <p>© 2025 PromptMint. All rights reserved.</p>
+</footer>
+
 <script src="js/fix.js"></script>
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('sidebar');
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
-</script>
 </body>
-</html>
+</html>￼Enter
