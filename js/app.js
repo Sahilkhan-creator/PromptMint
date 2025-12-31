@@ -1,74 +1,38 @@
-let credits = 25;
+let credits = localStorage.getItem("credits")
+  ? parseInt(localStorage.getItem("credits"))
+  : 25;
 
 function updateCredits() {
-  const creditEl = document.getElementById("creditCount");
-  if (creditEl) {
-    creditEl.innerText = credits;
-  }
+  document.querySelectorAll("#creditCount").forEach(el => {
+    el.innerText = credits;
+  });
+  localStorage.setItem("credits", credits);
 }
 
 function generatePrompt() {
-  if (credits <= 0) {
-    alert("No credits left.");
-    return;
-  }
+  if (credits <= 0) return alert("No credits left");
 
   const idea = document.getElementById("ideaInput").value.trim();
-  const style = document.getElementById("style").value;
-  const platform = document.getElementById("platform").value;
-  const quality = document.getElementById("quality").value;
-
-  if (!idea) {
-    alert("Please enter an idea");
-    return;
-  }
+  if (!idea) return alert("Enter an idea");
 
   credits--;
   updateCredits();
 
-  let qualityText =
-    quality === "Ultra"
-      ? "ultra-detailed, 8k, professional lighting"
-      : quality === "High"
-      ? "high-quality, sharp focus"
-      : "high quality";
-
-  let platformText =
-    platform === "Midjourney"
-      ? "optimized for Midjourney v6"
-      : platform === "DALL·E"
-      ? "optimized for DALL·E"
-      : "optimized for Stable Diffusion";
-
-  const finalPrompt =
-    `Create a ${style.toLowerCase()} image of ${idea}, ` +
-    `${qualityText}, cinematic composition, realistic textures, ` +
-    `clean background, depth of field, ${platformText}.`;
-
-  document.getElementById("outputBox").value = finalPrompt;
+  document.getElementById("outputBox").value =
+    `Create a cinematic, high-quality image of ${idea}, ultra-detailed, professional lighting, depth of field.`;
 }
 
 function fixPrompt() {
-  if (credits <= 0) {
-    alert("No credits left.");
-    return;
-  }
+  if (credits <= 0) return alert("No credits left");
 
-  const badPrompt = document.getElementById("ideaInput").value.trim();
-  if (!badPrompt) {
-    alert("Paste a prompt to fix");
-    return;
-  }
+  const text = document.getElementById("ideaInput").value.trim();
+  if (!text) return alert("Paste a prompt");
 
   credits--;
   updateCredits();
 
-  const fixedPrompt =
-    `Rewrite and improve this AI image prompt:\n\n"${badPrompt}"\n\n` +
-    `Add clarity, subject focus, lighting, environment, style, ` +
-    `and high-quality rendering details.`;
-
-  document.getElementById("outputBox").value = fixedPrompt;
+  document.getElementById("outputBox").value =
+    `Improved AI image prompt:\n\n${text}\n\nAdd lighting, composition, realism, and clarity.`;
 }
 
 updateCredits();
