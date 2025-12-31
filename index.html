@@ -1,66 +1,42 @@
-here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<!-- =========================
- ADD THIS ANYWHERE IN HEADER
- (for credits display)
-========================= -->
-<div class="profile-bar">
+<!-- MENU -->
+<nav class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="generate.html">Generate Prompt</a>
+  <a href="fix.html">Fix Prompt</a>
+  <a href="pricing.html">Pricing</a>
+</nav>
+
+<!-- PROFILE -->
+<div class="profile-box">
+  <strong>Guest User</strong><br>
   Credits: <span id="creditCount">25</span>
 </div>
-<!-- ========================= -->
 
+<!-- MAIN -->
+<div class="container">
 
-<!-- =========================
- ADD THIS WHERE YOUR TOOL IS
- (main content area)
-========================= -->
-<section class="prompt-tool">
+  <h1>Mint Prompt</h1>
+  <p>
+    Mint Prompt helps you generate high-quality AI image prompts
+    optimized for Midjourney, DALL·E and Stable Diffusion.
+  </p>
 
-  <h2>Prompt Generator</h2>
+  <div class="home-buttons">
+    <a class="btn" href="generate.html">Generate Prompt</a>
+    <a class="btn" href="fix.html">Fix Prompt</a>
+  </div>
 
-  <textarea id="ideaInput"
-    placeholder="Describe your image idea or paste a bad prompt..."></textarea>
+</div>
 
-  <select id="style">
-    <option value="Realistic">Realistic</option>
-    <option value="Cinematic">Cinematic</option>
-    <option value="Anime">Anime</option>
-    <option value="3D">3D</option>
-  </select>
-
-  <select id="platform">
-    <option value="Midjourney">Midjourney</option>
-    <option value="DALL·E">DALL·E</option>
-    <option value="Stable Diffusion">Stable Diffusion</option>
-  </select>
-
-  <select id="quality">
-    <option value="Normal">Normal</option>
-    <option value="High">High</option>
-    <option value="Ultra">Ultra</option>
-  </select>
-
-  <button onclick="generatePrompt()">Generate Prompt (1 Credit)</button>
-  <button onclick="fixPrompt()">Fix Prompt (1 Credit)</button>
-
-  <textarea id="outputBox"
-    placeholder="Generated / Fixed prompt will appear here..."
-    readonly></textarea>
-
-</section>
-<!-- ========================= -->
-
-
-<!-- ✅ REQUIRED: JS FILE -->
 <script src="js/app.js"></script>
-
 </body>
 </html>
