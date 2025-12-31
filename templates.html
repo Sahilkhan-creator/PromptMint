@@ -1,0 +1,68 @@
+here<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Templates – PromptMint</title>
+  <meta name="description" content="Ready-made AI prompt templates for daily use.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="left">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <h1 class="logo">PromptMint</h1>
+  </div>
+
+  <div class="right">
+    <span id="creditText"></span>
+    <div class="profile" onclick="toggleProfile()">👤</div>
+  </div>
+</header>
+
+<nav id="sideMenu" class="side-menu">
+  <a href="index.html">Home</a>
+  <a href="templates.html">Templates</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div id="profileBox" class="profile-box">
+  <p><strong>Name:</strong> Guest User</p>
+  <p><strong>Plan:</strong> Free</p>
+  <p><strong>Credits:</strong> <span id="profileCredits"></span></p>
+</div>
+
+<main class="templates">
+  <h2>Prompt Templates</h2>
+  <p>Buy ready-made prompts using credits (5 credits each)</p>
+
+  <div class="template-card">
+    <h3>YouTube Video Script</h3>
+    <p>Create engaging YouTube scripts in seconds.</p>
+    <button onclick="buyTemplate('YouTube Script')">Buy – 5 Credits</button>
+  </div>
+
+  <div class="template-card">
+    <h3>Instagram Caption Generator</h3>
+    <p>High-converting captions for reels & posts.</p>
+    <button onclick="buyTemplate('Instagram Caption')">Buy – 5 Credits</button>
+  </div>
+
+  <div class="template-card">
+    <h3>Website SEO Content</h3>
+    <p>SEO-optimized content for blogs & landing pages.</p>
+    <button onclick="buyTemplate('SEO Content')">Buy – 5 Credits</button>
+  </div>
+
+  <div class="template-card">
+    <h3>App Description (Play Store)</h3>
+    <p>Professional app descriptions for Play Store.</p>
+    <button onclick="buyTemplate('App Description')">Buy – 5 Credits</button>
+  </div>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+      </html>
