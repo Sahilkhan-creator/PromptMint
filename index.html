@@ -1,75 +1,71 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PromptMint – AI Prompt Generator</title>
+  <title>PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Sidebar Menu -->
-<div class="sidebar" id="sidebar">
-  <button class="close-btn" id="closeSidebar">&times;</button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="generate.html">Generate Prompt</a></li>
-    <li><a href="fix.html">Fix Prompt</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-    <li><a href="terms.html">Terms & Conditions</a></li>
-  </ul>
-</div>
+  <!-- HEADER / TOP NAV -->
+  <header class="topbar">
+    <div class="logo">PromptMint</div>
+    <div class="nav-buttons">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="profile" id="profileBtn">&#128100;</div>
+    </div>
+  </header>
 
-<!-- Topbar -->
-<header class="topbar">
-  <h1 class="logo">PromptMint</h1>
-
-  <!-- Hamburger Button -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+  <!-- PROFILE POPUP -->
+  <div class="profilePopup" id="profilePopup">
+    <p><strong>Name:</strong> Guest User</p>
+    <p><strong>Plan:</strong> Free</p>
+    <p><strong>Credits:</strong> 25</p>
+    <button id="logoutBtn">Logout</button>
   </div>
 
-  <!-- Profile Button -->
-  <div class="profile" id="profileBtn">👤</div>
-</header>
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeSidebar">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="generate.html">Generate Prompt</a></li>
+      <li><a href="fix.html">Fix Prompt</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms & Conditions</a></li>
+    </ul>
+  </div>
 
-<!-- Profile Popup -->
-<div class="profilePopup" id="profilePopup">
-  <p>Name: Guest User</p>
-  <p>Plan: Free</p>
-  <p>Credits: <span id="creditsDisplay">25</span></p>
-  <button id="logoutBtn">Logout</button>
-</div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="hero">
+      <h1>Welcome to PromptMint</h1>
+      <p>Create or fix AI prompts for MidJourney, DALL·E, Stable Diffusion, and more!</p>
+      <div class="buttons">
+        <a href="generate.html" class="tool-btn">Generate Prompt</a>
+        <a href="fix.html" class="tool-btn">Fix Prompt</a>
+      </div>
+    </section>
 
-<!-- Main Content -->
-<main class="main">
-  <section class="hero">
-    <h2>Welcome to PromptMint</h2>
-    <p>Create or fix AI prompts for MidJourney, DALL·E, Stable Diffusion, and more!</p>
-    <div class="buttons">
-      <a href="generate.html" class="tool-btn">Generate Prompt</a>
-      <a href="fix.html" class="tool-btn">Fix Prompt</a>
-    </div>
-
-    <div class="info">
+    <section class="info">
       <h3>About PromptMint</h3>
       <p>Use our free system to generate high-quality AI prompts or fix your existing ones. Free users get 25 credits, and you can earn more by watching ads or upgrading your plan.</p>
       <p>We also offer prompt templates to help you get started quickly.</p>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 PromptMint. All rights reserved.</p>
-</footer>
+  <footer>
+    &copy; 2025 PromptMint. All rights reserved.
+  </footer>
 
-<!-- JS -->
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
-        </html>
+</html>￼Enter
