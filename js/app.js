@@ -1,38 +1,35 @@
-let credits = localStorage.getItem("credits")
-  ? parseInt(localStorage.getItem("credits"))
-  : 25;
+// ===== SIDEBAR / HAMBURGER MENU =====
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const closeSidebar = document.getElementById('closeSidebar');
 
-function updateCredits() {
-  document.querySelectorAll("#creditCount").forEach(el => {
-    el.innerText = credits;
-  });
-  localStorage.setItem("credits", credits);
-}
+hamburger.addEventListener('click', () => {
+  sidebar.classList.add('active');
+});
 
-function generatePrompt() {
-  if (credits <= 0) return alert("No credits left");
+closeSidebar.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+});
 
-  const idea = document.getElementById("ideaInput").value.trim();
-  if (!idea) return alert("Enter an idea");
+// ===== PROFILE POPUP =====
+const profileBtn = document.getElementById('profileBtn');
+const profilePopup = document.getElementById('profilePopup');
 
-  credits--;
-  updateCredits();
+profileBtn.addEventListener('click', () => {
+  profilePopup.style.display = profilePopup.style.display === 'block' ? 'none' : 'block';
+});
 
-  document.getElementById("outputBox").value =
-    `Create a cinematic, high-quality image of ${idea}, ultra-detailed, professional lighting, depth of field.`;
-}
+// Click outside profile popup to close it
+window.addEventListener('click', (e) => {
+  if (!profilePopup.contains(e.target) && e.target !== profileBtn) {
+    profilePopup.style.display = 'none';
+  }
+});
 
-function fixPrompt() {
-  if (credits <= 0) return alert("No credits left");
-
-  const text = document.getElementById("ideaInput").value.trim();
-  if (!text) return alert("Paste a prompt");
-
-  credits--;
-  updateCredits();
-
-  document.getElementById("outputBox").value =
-    `Improved AI image prompt:\n\n${text}\n\nAdd lighting, composition, realism, and clarity.`;
-}
-
-updateCredits();
+// ===== LOGOUT BUTTON =====
+const logoutBtn = document.getElementById('logoutBtn');
+logoutBtn.addEventListener('click', () => {
+  alert("Logged out successfully!");
+  // For now, just reload page
+  window.location.reload();
+});
