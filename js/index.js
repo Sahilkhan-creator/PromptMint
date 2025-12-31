@@ -1,35 +1,25 @@
-// MENU TOGGLE
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
-const closeSidebar = document.querySelector('.close-sidebar');
+// Sidebar
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const closeSidebar = document.getElementById('closeSidebar');
 
-menuToggle?.addEventListener('click', () => {
-  sidebar?.classList.add('open');
+hamburger.addEventListener('click', () => {
+  sidebar.classList.add('active');
 });
 
-closeSidebar?.addEventListener('click', () => {
-  sidebar?.classList.remove('open');
+closeSidebar.addEventListener('click', () => {
+  sidebar.classList.remove('active');
 });
 
-// PROFILE TOGGLE
-const profileToggle = document.querySelector('.profile-toggle');
-const profileSidebar = document.querySelector('.profile-sidebar');
-const closeProfile = document.querySelector('.close-profile');
+// Profile
+const profileIcon = document.getElementById('profileIcon');
+const profilePanel = document.getElementById('profilePanel');
 
-profileToggle?.addEventListener('click', () => {
-  profileSidebar?.classList.add('open');
+profileIcon.addEventListener('click', () => {
+  profilePanel.style.display = profilePanel.style.display === 'block' ? 'none' : 'block';
 });
 
-closeProfile?.addEventListener('click', () => {
-  profileSidebar?.classList.remove('open');
-});
-
-// Close sidebar or profile if clicked outside
-document.addEventListener('click', (e) => {
-  if (!sidebar?.contains(e.target) && !menuToggle?.contains(e.target)) {
-    sidebar?.classList.remove('open');
-  }
-  if (!profileSidebar?.contains(e.target) && !profileToggle?.contains(e.target)) {
-    profileSidebar?.classList.remove('open');
-  }
+// Close sidebar if click outside
+window.addEventListener('click', (e) => {
+  if (e.target === sidebar) sidebar.classList.remove('active');
 });
