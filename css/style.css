@@ -1,4 +1,10 @@
-/* ===== EXISTING STYLES ===== */
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
 
 /* ===== HEADER ===== */
 .topbar {
@@ -12,26 +18,21 @@
 }
 
 .logo {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
-/* ===== HAMBURGER ===== */
-.hamburger {
-  width: 30px;
-  height: 22px;
+.header-buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
-.hamburger span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
-  transition: 0.3s;
+/* ===== HAMBURGER & PROFILE ===== */
+.hamburger, .profile-icon {
+  user-select: none;
 }
 
 /* ===== SIDEBAR ===== */
@@ -43,19 +44,18 @@
   height: 100%;
   background: #0D1117;
   padding: 20px;
-  display: flex; /* hide by default, will control with JS */
+  display: none;
   flex-direction: column;
   transition: right 0.3s ease;
   z-index: 100;
-  display: none; /* hide by default */
 }
 
-.sidebar.open {
+.sidebar.active {
   display: flex;
   right: 0;
 }
 
-.sidebar .close-sidebar {
+.sidebar .close-btn {
   background: transparent;
   border: none;
   color: white;
@@ -85,81 +85,88 @@
   color: #5b4fff;
 }
 
-/* ===== PROFILE SIDEBAR ===== */
-.profile-sidebar {
+/* ===== PROFILE PANEL ===== */
+.profile-panel {
   position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  transition: right 0.3s ease;
-  z-index: 100;
-  display: none; /* hide by default */
-}
-
-.profile-sidebar.open {
-  display: flex;
-  right: 0;
-}
-
-.profile-sidebar .close-profile {
-  background: transparent;
-  border: none;
+  top: 60px;
+  right: 20px;
+  background: #1a1a1a;
   color: white;
-  font-size: 2em;
-  align-self: flex-end;
-  cursor: pointer;
-  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  display: none;
+  z-index: 101;
 }
 
-.profile-sidebar h2 {
-  color: white;
-  margin-bottom: 10px;
-}
-
-.profile-sidebar p {
-  color: #ccc;
-  margin: 5px 0;
-}
-
-/* ===== MAIN CONTENT ===== */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: #e6e0ff;
+  padding: 80px 20px;
+  background: linear-gradient(120deg, #e6e0ff, #ffffff);
 }
 
 .hero h2 {
   color: #5b4fff;
-  font-size: 2em;
+  font-size: 2.2em;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  margin-top: 15px;
+  margin-bottom: 30px;
   font-size: 1.1em;
+  color: #333;
 }
 
-.buttons {
-  margin-top: 25px;
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.tool-btn {
-  display: inline-block;
-  margin: 10px;
+.btn {
+  text-decoration: none;
   padding: 15px 30px;
-  background: #5b4fff;
-  color: white;
   border-radius: 6px;
   font-weight: bold;
-  text-decoration: none;
+  transition: 0.3s;
 }
 
-.tool-btn:hover {
+.btn.primary {
+  background: #5b4fff;
+  color: white;
+}
+
+.btn.primary:hover {
   background: #4033cc;
+}
+
+.btn.secondary {
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid #5b4fff;
+}
+
+.btn.secondary:hover {
+  background: #5b4fff;
+  color: white;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content h3 {
+  color: #5b4fff;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* ===== FOOTER ===== */
@@ -167,37 +174,5 @@ footer {
   background: #222;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
 }
-
-/* ===== EXTRA SECTIONS ===== */
-section {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-  background: #f5f5f5;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-/* ===== HEADER ICONS ===== */
-.header-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.header-icons button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 1.5em;
-  position: relative;
-}
-
-.header-icons img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-    }
