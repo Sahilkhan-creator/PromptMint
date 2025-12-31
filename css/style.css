@@ -1,187 +1,193 @@
+/* ===== GENERAL ===== */
 body {
-  font-family: Arial, sans-serif;
-  background: #e6e0ff;
   margin: 0;
-  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f5;
+  color: #333;
 }
 
+/* ===== HEADER / TOPBAR ===== */
 .topbar {
-  background: #5b4fff;
-  color: white;
-  padding: 15px;
   display: flex;
   justify-content: space-between;
-}
-
-.hero {
-  text-align: center;
-  margin-top: 40px;
-}
-
-button {
-  padding: 12px 20px;
-  margin: 10px;
+  align-items: center;
+  padding: 15px 20px;
   background: #5b4fff;
   color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  position: relative;
+  z-index: 200;
 }
 
-.ad-box {
-  margin-top: 30px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.links {
-  margin-top: 30px;
-}
-
-.pricing {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.plan {
-  background: #0d1117;
-  color: white;
-  padding: 20px;
-  width: 220px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.center {
-  text-align: center;
-}￼Enter
-.left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.profile {
-  background: white;
-  color: #5b4fff;
-  padding: 6px 10px;
-  border-radius: 50%;
-  cursor: pointer;
+.logo {
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-/* SIDE MENU */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -220px;
-  width: 200px;
-  height: 100%;
-  background: #0d1117;
-  padding: 20px;
+/* ===== HAMBURGER ===== */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
   transition: 0.3s;
 }
 
-.side-menu a {
-  display: block;
-  color: white;
-  margin: 15px 0;
-  text-decoration: none;
+/* ===== PROFILE BUTTON ===== */
+.profile {
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
-.side-menu.show {
-  left: 0;
-}
-
-/* PROFILE BOX */
-.profile-box {
+/* ===== PROFILE POPUP ===== */
+.profilePopup {
   position: absolute;
   top: 60px;
   right: 20px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  display: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.profile-box button {
-  width: 100%;
-  margin-top: 10px;
-  }
-.templates {
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.template-card {
   background: #0d1117;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: white;
+  padding: 15px;
+  border-radius: 6px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 250;
 }
 
-.template-card h3 {
+.profilePopup p {
+  margin: 5px 0;
+}
+
+.profilePopup button {
+  background: #5b4fff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profilePopup button:hover {
+  background: #4033cc;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #0D1117;
+  padding: 20px;
+  display: none; /* hidden by default */
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.active {
+  display: flex; /* show when active */
+  right: 0; /* slide in */
+}
+
+.sidebar .close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2em;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.sidebar ul li a:hover {
   color: #5b4fff;
 }
 
-.template-card p {
-  color: #ccc;
+/* ===== MAIN CONTENT ===== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #e6e0ff;
 }
 
-.template-card button {
+.hero h2 {
+  color: #5b4fff;
+  font-size: 2em;
+}
+
+.hero p {
+  font-size: 1.1em;
   margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.tool-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
   background: #5b4fff;
   color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  }
-.prompt-tool {
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.tool-btn:hover {
+  background: #4033cc;
+}
+
+/* ===== INFO SECTION ===== */
+.info {
   max-width: 700px;
-  margin: 40px auto;
-  background: #f4f1ff;
-  padding: 25px;
-  border-radius: 10px;
+  margin: 40px auto 0;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.prompt-tool textarea,
-.prompt-tool select {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.info h3 {
+  color: #5b4fff;
+  margin-bottom: 15px;
 }
 
-.prompt-tool .btns {
-  display: flex;
-  gap: 10px;
-}
-
-.prompt-tool button {
-  flex: 1;
-  padding: 12px;
-  background: #5b4fff;
+/* ===== FOOTER ===== */
+footer {
+  background: #222;
   color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  text-align: center;
+  padding: 15px;
   }
