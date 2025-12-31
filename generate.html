@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generate Prompt - PromptMint</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Prompt - PromptMint</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Sidebar / Menu -->
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">Home</a>
-    <a href="generate.html">Generate Prompt</a>
-    <a href="fix.html">Fix Prompt</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </div>
+<!-- Navbar -->
+<header>
+    <div class="logo">PromptMint</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <div class="profile-icon">&#128100;</div>
+</header>
 
-  <!-- Top bar -->
-  <div class="topbar">
-    <button id="menuBtn">☰</button>
-    <div class="profile" id="profileBtn">👤</div>
-    <div class="profilePopup" id="profilePopup">
-      <p>Name: Guest User</p>
-      <p>Plan: Free</p>
-      <p>Credits: <span id="creditsDisplay">25</span></p>
-      <button id="logoutBtn">Logout</button>
-    </div>
-  </div>
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generate.html">Generate Prompt</a></li>
+        <li><a href="fix.html">Fix Prompt</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- Main content -->
-  <div class="main">
-    <h2>Generate AI Prompt</h2>
-    <input type="text" id="userInput" placeholder="Describe your image idea or bad prompt...">
-    <select id="styleSelect">
-      <option>Realistic</option>
-      <option>Cartoon</option>
-      <option>Anime</option>
-    </select>
-    <select id="platformSelect">
-      <option>MidJourney</option>
-      <option>DALL·E</option>
-      <option>Stable Diffusion</option>
-    </select>
-    <select id="qualitySelect">
-      <option>Normal</option>
-      <option>High</option>
-      <option>Ultra</option>
-    </select>
-    <button id="generateBtn">Generate Prompt (1 Credit)</button>
-    <textarea id="output" placeholder="Generated prompt will appear here..." readonly></textarea>
-  </div>
+<!-- Main Content -->
+<main>
+    <h1>Generate Your AI Prompt</h1>
+    <p>Enter your image idea below and choose purpose, type, and AI model to generate a prompt.</p>
 
-  <script src="js/app.js"></script>
-  <script src="js/generate.js"></script>
+    <input type="text" id="userPrompt" placeholder="Describe your image idea...">
+    <select id="purpose">
+        <option value="Artistic">Artistic</option>
+        <option value="Realistic">Realistic</option>
+    </select>
+    <select id="type">
+        <option value="Normal">Normal</option>
+        <option value="Detailed">Detailed</option>
+    </select>
+    <select id="model">
+        <option value="MidJourney">MidJourney</option>
+        <option value="DALLE">DALL·E</option>
+        <option value="StableDiffusion">Stable Diffusion</option>
+    </select>
+
+    <button id="generateBtn">Generate Prompt</button>
+    <textarea id="outputPrompt" placeholder="Generated prompt will appear here..." readonly></textarea>
+</main>
+
+<script src="js/generate.js"></script>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+</script>
 </body>
 </html>
