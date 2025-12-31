@@ -1,51 +1,60 @@
-here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Generate Prompt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Prompt - PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sidebar / Menu -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="generate.html">Generate Prompt</a>
+    <a href="fix.html">Fix Prompt</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
 
-<nav class="sidebar">
-  <a href="index.html">Home</a>
-  <a href="generate.html">Generate Prompt</a>
-  <a href="fix.html">Fix Prompt</a>
-</nav>
+  <!-- Top bar -->
+  <div class="topbar">
+    <button id="menuBtn">☰</button>
+    <div class="profile" id="profileBtn">👤</div>
+    <div class="profilePopup" id="profilePopup">
+      <p>Name: Guest User</p>
+      <p>Plan: Free</p>
+      <p>Credits: <span id="creditsDisplay">25</span></p>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </div>
 
-<div class="profile-box">
-  Credits: <span id="creditCount">25</span>
-</div>
+  <!-- Main content -->
+  <div class="main">
+    <h2>Generate AI Prompt</h2>
+    <input type="text" id="userInput" placeholder="Describe your image idea or bad prompt...">
+    <select id="styleSelect">
+      <option>Realistic</option>
+      <option>Cartoon</option>
+      <option>Anime</option>
+    </select>
+    <select id="platformSelect">
+      <option>MidJourney</option>
+      <option>DALL·E</option>
+      <option>Stable Diffusion</option>
+    </select>
+    <select id="qualitySelect">
+      <option>Normal</option>
+      <option>High</option>
+      <option>Ultra</option>
+    </select>
+    <button id="generateBtn">Generate Prompt (1 Credit)</button>
+    <textarea id="output" placeholder="Generated prompt will appear here..." readonly></textarea>
+  </div>
 
-<div class="container">
-  <h2>Generate Image Prompt</h2>
-
-  <textarea id="ideaInput" placeholder="Describe your image idea..."></textarea>
-
-  <select id="style">
-    <option>Realistic</option>
-    <option>Cinematic</option>
-    <option>Anime</option>
-    <option>3D</option>
-  </select>
-
-  <select id="platform">
-    <option>Midjourney</option>
-    <option>DALL·E</option>
-    <option>Stable Diffusion</option>
-  </select>
-
-  <select id="quality">
-    <option>Normal</option>
-    <option>High</option>
-    <option>Ultra</option>
-  </select>
-
-  <button onclick="generatePrompt()">Generate Prompt (1 Credit)</button>
-
-  <textarea id="outputBox" readonly placeholder="Generated prompt will appear here..."></textarea>
-</div>
-
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/generate.js"></script>
 </body>
-  </html>
+</html>
