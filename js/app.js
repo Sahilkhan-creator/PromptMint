@@ -1,79 +1,74 @@
-here// INIT USER
-if (!localStorage.getItem("credits")) {
-  localStorage.setItem("credits", 25);
-}
-if (!localStorage.getItem("name")) {
-  localStorage.setItem("name", "Guest User");
-}
-if (!localStorage.getItem("plan")) {
-  localStorage.setItem("plan", "Free");
-}
+let credits = 25;
 
-// UPDATE UI
 function updateCredits() {
-  const credits = localStorage.getItem("credits");
-  const creditText = document.getElementById("creditText");
-  const profileCredits = document.getElementById("profileCredits");
-
-  if (creditText) creditText.innerText = "Credits: " + credits;
-  if (profileCredits) profileCredits.innerText = credits;
-}
-updateCredits();
-
-// MENU
-function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle("show");
-}
-
-// PROFILE
-function toggleProfile() {
-  const box = document.getElementById("profileBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-
-// CREDIT SYSTEM
-function useCredit() {
-  let c = parseInt(localStorage.getItem("credits"));
-  if (c <= 0) {
-    alert("No credits left!");
-    return false;
+  const creditEl = document.getElementById("creditCount");
+  if (creditEl) {
+    creditEl.innerText = credits;
   }
-  localStorage.setItem("credits", c - 1);
-  updateCredits();
-  return true;
 }
 
-// PROMPTS
 function generatePrompt() {
-  if (!useCredit()) return;
-  alert("Prompt generated successfully ✅");
+  if (credits <= 0) {
+    alert("No credits left.");
+    return;
+  }
+
+  const idea = document.getElementById("ideaInput").value.trim();
+  const style = document.getElementById("style").value;
+  const platform = document.getElementById("platform").value;
+  const quality = document.getElementById("quality").value;
+
+  if (!idea) {
+    alert("Please enter an idea");
+    return;
+  }
+
+  credits--;
+  updateCredits();
+
+  let qualityText =
+    quality === "Ultra"
+      ? "ultra-detailed, 8k, professional lighting"
+      : quality === "High"
+      ? "high-quality, sharp focus"
+      : "high quality";
+
+  let platformText =
+    platform === "Midjourney"
+      ? "optimized for Midjourney v6"
+      : platform === "DALL·E"
+      ? "optimized for DALL·E"
+      : "optimized for Stable Diffusion";
+
+  const finalPrompt =
+    `Create a ${style.toLowerCase()} image of ${idea}, ` +
+    `${qualityText}, cinematic composition, realistic textures, ` +
+    `clean background, depth of field, ${platformText}.`;
+
+  document.getElementById("outputBox").value = finalPrompt;
 }
 
 function fixPrompt() {
-  if (!useCredit()) return;
-  alert("Prompt fixed successfully ✅");
-}
+  if (credits <= 0) {
+    alert("No credits left.");
+    return;
+  }
 
-// WATCH AD (FAKE)
-function watchAd() {
-  alert("Watching ad...");
-  setTimeout(() => {
-    let c = parseInt(localStorage.getItem("credits"));
-    localStorage.setItem("credits", c + 3);
-    updateCredits();
-    alert("You earned 3 credits 🎉");
-  }, 4000);
-}
+  const badPrompt = document.getElementById("ideaInput").value.trim();
+  if (!badPrompt) {
+    alert("Paste a prompt to fix");
+    return;
+  }
 
-// PLANS
-function activatePlan(credits) {
-  localStorage.setItem("credits", credits);
-  localStorage.setItem("plan", "Premium");
+  credits--;
   updateCredits();
-  alert("Plan activated!");
+
+  const fixedPrompt =
+    `Rewrite and improve this AI image prompt:\n\n"${badPrompt}"\n\n` +
+    `Add clarity, subject focus, lighting, environment, style, ` +
+    `and high-quality rendering details.`;
+
+  document.getElementById("outputBox").value = fixedPrompt;
 }
 
-// LOGOUT (FAKE)
-function logout() {
-  alert("Logged out (fake)");
-}
+updateCredits();
