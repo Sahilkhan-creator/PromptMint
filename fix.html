@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fix Prompt - PromptMint</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix Prompt - PromptMint</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Sidebar / Menu -->
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">Home</a>
-    <a href="generate.html">Generate Prompt</a>
-    <a href="fix.html">Fix Prompt</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </div>
+<!-- Navbar -->
+<header>
+    <div class="logo">PromptMint</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <div class="profile-icon">&#128100;</div>
+</header>
 
-  <!-- Top bar -->
-  <div class="topbar">
-    <button id="menuBtn">☰</button>
-    <div class="profile" id="profileBtn">👤</div>
-    <div class="profilePopup" id="profilePopup">
-      <p>Name: Guest User</p>
-      <p>Plan: Free</p>
-      <p>Credits: <span id="creditsDisplay">25</span></p>
-      <button id="logoutBtn">Logout</button>
-    </div>
-  </div>
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generate.html">Generate Prompt</a></li>
+        <li><a href="fix.html">Fix Prompt</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- Main content -->
-  <div class="main">
-    <h2>Fix AI Prompt</h2>
-    <textarea id="badPrompt" placeholder="Paste your bad prompt here..."></textarea>
-    <button id="fixBtn">Fix Prompt (1 Credit)</button>
-    <textarea id="fixedOutput" placeholder="Fixed prompt will appear here..." readonly></textarea>
-  </div>
+<!-- Main Content -->
+<main>
+    <h1>Fix Your Existing AI Prompt</h1>
+    <p>Enter your bad prompt below and choose purpose, type, and AI model to fix it.</p>
 
-  <script src="js/app.js"></script>
-  <script src="js/fix.js"></script>
+    <input type="text" id="badPrompt" placeholder="Paste your bad prompt...">
+    <select id="fixPurpose">
+        <option value="Artistic">Artistic</option>
+        <option value="Realistic">Realistic</option>
+    </select>
+    <select id="fixType">
+        <option value="Normal">Normal</option>
+        <option value="Detailed">Detailed</option>
+    </select>
+    <select id="fixModel">
+        <option value="MidJourney">MidJourney</option>
+        <option value="DALLE">DALL·E</option>
+        <option value="StableDiffusion">Stable Diffusion</option>
+    </select>
+
+    <button id="fixBtn">Fix Prompt</button>
+    <textarea id="fixedPrompt" placeholder="Fixed prompt will appear here..." readonly></textarea>
+</main>
+
+<script src="js/fix.js"></script>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+</script>
 </body>
 </html>
