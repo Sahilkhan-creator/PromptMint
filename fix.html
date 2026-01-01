@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fix Prompt – PromptMint</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fix Prompt | PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="topbar">
   <h1 class="logo">PromptMint</h1>
-  <div class="header-buttons">
-    <span class="hamburger" id="hamburger">&#9776;</span>
-    <span class="profile-icon" id="profileIcon">&#128100;</span>
+
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
   </div>
 </header>
 
+<!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <button class="close-btn" id="closeSidebar">&times;</button>
   <ul>
@@ -23,33 +25,26 @@
     <li><a href="generate.html">Generate Prompt</a></li>
     <li><a href="fix.html">Fix Prompt</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
 </div>
 
-<div class="profile-panel" id="profilePanel">
-  <p><strong>User:</strong> Demo User</p>
-  <p><strong>Credits:</strong> 25</p>
-  <p><strong>Email:</strong> demo@example.com</p>
-</div>
+<main class="tool-page">
+  <h2>Fix & Improve Prompt</h2>
+  <p>Optimize your existing AI prompt for better results.</p>
 
-<main class="hero">
-  <h2>Fix Your Prompts</h2>
-  <p>Paste your existing prompt and let PromptMint improve it for clarity and creativity.</p>
+  <textarea
+    id="fixInput"
+    placeholder="Paste your prompt here..."
+  ></textarea>
 
-  <div class="prompt-form">
-    <textarea id="userFixPrompt" placeholder="Paste your prompt here..."></textarea>
-    <button id="fixBtn" class="btn primary">Fix Prompt</button>
-    <div id="loadingFix" class="loading">Fixing...</div>
-    <div id="outputFix" class="output"></div>
-  </div>
+  <button id="fixBtn" class="primary-btn">
+    Fix Prompt
+  </button>
+
+  <div id="outputFix" class="output-box"></div>
 </main>
 
-<footer>
-  <p>© 2025 PromptMint. All rights reserved.</p>
-</footer>
-
+<script src="js/index.js"></script>
 <script src="js/fix.js"></script>
 </body>
 </html>￼Enter
