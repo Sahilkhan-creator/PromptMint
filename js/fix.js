@@ -1,34 +1,32 @@
-// Sidebar & Profile
-const hamburgerFix = document.getElementById('hamburger');
-const sidebarFix = document.getElementById('sidebar');
-const closeSidebarFix = document.getElementById('closeSidebar');
-const profileIconFix = document.getElementById('profileIcon');
-const profilePanelFix = document.getElementById('profilePanel');
+document.getElementById("fixBtn").addEventListener("click", () => {
+  const rawPrompt = document.getElementById("fixInput").value.trim();
+  const output = document.getElementById("outputFix");
 
-hamburgerFix.addEventListener('click', () => sidebarFix.classList.add('active'));
-closeSidebarFix.addEventListener('click', () => sidebarFix.classList.remove('active'));
-profileIconFix.addEventListener('click', () => {
-  profilePanelFix.style.display = profilePanelFix.style.display === 'block' ? 'none' : 'block';
-});
-
-// Fix prompt logic
-const fixBtn = document.getElementById('fixBtn');
-const loadingFix = document.getElementById('loadingFix');
-const outputFix = document.getElementById('outputFix');
-
-fixBtn.addEventListener('click', () => {
-  const userText = document.getElementById('userFixPrompt').value;
-
-  if(!userText.trim()) {
-    outputFix.innerHTML = "<p>Please enter your prompt to fix!</p>";
+  if (!rawPrompt) {
+    output.innerText = "❌ Please paste a prompt to improve.";
     return;
   }
 
-  loadingFix.style.display = 'block';
-  outputFix.innerHTML = '';
+  const improvements = [
+    "enhanced clarity",
+    "better structure",
+    "professional wording",
+    "improved detail",
+    "optimized for image generation",
+    "balanced composition",
+    "clear visual intent"
+  ];
 
-  setTimeout(() => {
-    loadingFix.style.display = 'none';
-    outputFix.innerHTML = `<p><strong>Fixed Prompt:</strong> ${userText} [Improved and polished prompt here!]</p>`;
-  }, 1500);
+  const cleanedPrompt = rawPrompt
+    .replace(/[,]+/g, ",")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const improvedPrompt = `
+${cleanedPrompt},
+${improvements.sort(() => 0.5 - Math.random()).slice(0, 4).join(", ")},
+high-quality output, visually refined
+  `.trim();
+
+  output.innerText = improvedPrompt;
 });
