@@ -2,94 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Generate AI Prompt | PromptMint</title>
-  <meta name="description" content="Generate high-quality AI image prompts for Midjourney, Stable Diffusion, DALL·E and more.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>PromptMint – Creative Prompts Generator</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- HEADER (menu + profile already handled by index.js) -->
-<header class="top-bar">
-  <button id="menuBtn" class="menu-icon">☰</button>
+<header class="topbar">
   <h1 class="logo">PromptMint</h1>
-  <button id="profileBtn" class="profile-icon">👤</button>
+  <div class="header-buttons">
+    <span class="hamburger" id="hamburger">&#9776;</span>
+    <span class="profile-icon" id="profileIcon">&#128100;</span>
+  </div>
 </header>
 
-<!-- MAIN -->
-<main class="tool-container">
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">&times;</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="generate.html">Generate Prompt</a></li>
+    <li><a href="fix.html">Fix Prompt</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-  <h2>AI Prompt Generator</h2>
-  <p class="tool-desc">
-    Create detailed, professional prompts for AI image generators.
-    Choose a style, purpose, and detail level — PromptMint does the rest.
-  </p>
+<!-- Profile Panel -->
+<div class="profile-panel" id="profilePanel">
+  <p><strong>User:</strong> Demo User</p>
+  <p><strong>Credits:</strong> 25</p>
+  <p><strong>Email:</strong> demo@example.com</p>
+</div>
 
-  <!-- INPUT -->
-  <label>What do you want to generate?</label>
-  <textarea id="genInput" placeholder="Example: futuristic cyberpunk city with flying cars"></textarea>
+<main class="hero">
+  <h2>Generate and Fix Creative Prompts Instantly</h2>
+  <p>Use PromptMint to create AI-ready prompts or improve your existing ones — free or with subscription!</p>
 
-  <!-- OPTIONS -->
-  <div class="options-grid">
-    <div>
-      <label>Purpose</label>
-      <select id="genPurpose">
-        <option value="image">Image Generation</option>
-        <option value="art">Artwork / Illustration</option>
-        <option value="concept">Concept Art</option>
-      </select>
-    </div>
-
-    <div>
-      <label>Style</label>
-      <select id="genStyle">
-        <option value="cinematic">Cinematic</option>
-        <option value="anime">Anime</option>
-        <option value="photorealistic">Photorealistic</option>
-        <option value="digital-art">Digital Art</option>
-      </select>
-    </div>
-
-    <div>
-      <label>Detail Level</label>
-      <select id="genDetail">
-        <option value="normal">Normal</option>
-        <option value="detailed">Detailed</option>
-        <option value="ultra">Ultra Detailed</option>
-      </select>
-    </div>
+  <div class="hero-buttons">
+    <a href="generate.html" class="btn primary">Generate Prompt</a>
+    <a href="fix.html" class="btn secondary">Fix Prompt</a>
   </div>
-
-  <!-- BUTTON -->
-  <button id="generateBtn" class="primary-btn">
-    Generate Prompt
-  </button>
-
-  <!-- LOADING -->
-  <div id="genLoading" class="loading hidden">
-    Generating professional prompt...
-  </div>
-
-  <!-- OUTPUT -->
-  <label>Generated Prompt</label>
-  <textarea id="genOutput" readonly placeholder="Your generated AI prompt will appear here..."></textarea>
-
 </main>
 
-<!-- FOOTER CONTENT FOR SEO -->
-<section class="seo-content">
-  <h3>Why use PromptMint?</h3>
-  <p>
-    PromptMint helps creators generate optimized prompts for AI tools like
-    Midjourney, Stable Diffusion, and DALL·E. Our system adds lighting, style,
-    composition, and negative prompts automatically.
-  </p>
+<!-- Content Sections -->
+<section class="content">
+  <h3>Why Choose PromptMint?</h3>
+  <p>PromptMint offers a simple, fast, and creative way to generate prompts for AI, writing, and design.</p>
 </section>
 
-<!-- SCRIPTS -->
-<script src="js/index.js"></script>
-<script src="js/generate.js"></script>
+<section class="content">
+  <h3>Free & Subscription Plans</h3>
+  <p>Free users get 25 credits. Earn more credits by watching ads or choose subscription for unlimited access.</p>
+</section>
 
+<section class="content">
+  <h3>Generate Prompts for Multiple Purposes</h3>
+  <p>Whether it's AI art, content creation, or brainstorming, PromptMint generates prompts tailored for your need.</p>
+</section>
+
+<section class="content">
+  <h3>Fix Your Prompts</h3>
+  <p>Improve clarity, grammar, and creativity of your existing prompts to get the best AI results.</p>
+</section>
+
+<section class="content">
+  <h3>Get Started Today</h3>
+  <p>Sign up, use your free credits, and explore the power of PromptMint!</p>
+</section>
+
+<footer>
+  <p>© 2025 PromptMint. All rights reserved.</p>
+</footer>
+
+<script src="js/index.js"></script>
 </body>
-  </html>
+</html>
