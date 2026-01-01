@@ -1,50 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Generate Prompt | PromptMint</title>
+  <meta charset="UTF-8">
+  <title>Generate AI Prompt | PromptMint</title>
+  <meta name="description" content="Generate high-quality AI image prompts for Midjourney, Stable Diffusion, DALL·E and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topbar">
+<!-- HEADER (menu + profile already handled by index.js) -->
+<header class="top-bar">
+  <button id="menuBtn" class="menu-icon">☰</button>
   <h1 class="logo">PromptMint</h1>
-
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
+  <button id="profileBtn" class="profile-icon">👤</button>
 </header>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <button class="close-btn" id="closeSidebar">&times;</button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="generate.html">Generate Prompt</a></li>
-    <li><a href="fix.html">Fix Prompt</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-  </ul>
-</div>
+<!-- MAIN -->
+<main class="tool-container">
 
-<main class="tool-page">
   <h2>AI Prompt Generator</h2>
-  <p>Create high-quality prompts for AI tools like ChatGPT, Midjourney, DALL·E.</p>
+  <p class="tool-desc">
+    Create detailed, professional prompts for AI image generators.
+    Choose a style, purpose, and detail level — PromptMint does the rest.
+  </p>
 
-  <textarea
-    id="generateInput"
-    placeholder="Example: A cinematic cyberpunk city at night..."
-  ></textarea>
+  <!-- INPUT -->
+  <label>What do you want to generate?</label>
+  <textarea id="genInput" placeholder="Example: futuristic cyberpunk city with flying cars"></textarea>
 
+  <!-- OPTIONS -->
+  <div class="options-grid">
+    <div>
+      <label>Purpose</label>
+      <select id="genPurpose">
+        <option value="image">Image Generation</option>
+        <option value="art">Artwork / Illustration</option>
+        <option value="concept">Concept Art</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Style</label>
+      <select id="genStyle">
+        <option value="cinematic">Cinematic</option>
+        <option value="anime">Anime</option>
+        <option value="photorealistic">Photorealistic</option>
+        <option value="digital-art">Digital Art</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Detail Level</label>
+      <select id="genDetail">
+        <option value="normal">Normal</option>
+        <option value="detailed">Detailed</option>
+        <option value="ultra">Ultra Detailed</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- BUTTON -->
   <button id="generateBtn" class="primary-btn">
     Generate Prompt
   </button>
 
-  <div id="output" class="output-box"></div>
+  <!-- LOADING -->
+  <div id="genLoading" class="loading hidden">
+    Generating professional prompt...
+  </div>
+
+  <!-- OUTPUT -->
+  <label>Generated Prompt</label>
+  <textarea id="genOutput" readonly placeholder="Your generated AI prompt will appear here..."></textarea>
+
 </main>
 
+<!-- FOOTER CONTENT FOR SEO -->
+<section class="seo-content">
+  <h3>Why use PromptMint?</h3>
+  <p>
+    PromptMint helps creators generate optimized prompts for AI tools like
+    Midjourney, Stable Diffusion, and DALL·E. Our system adds lighting, style,
+    composition, and negative prompts automatically.
+  </p>
+</section>
+
+<!-- SCRIPTS -->
 <script src="js/index.js"></script>
 <script src="js/generate.js"></script>
+
 </body>
-</html>￼Enter
+  </html>
