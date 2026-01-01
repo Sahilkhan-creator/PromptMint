@@ -1,99 +1,97 @@
-document.getElementById("generateBtn").addEventListener("click", () => {
-  const idea = document.getElementById("generateInput").value.trim().toLowerCase();
-  const output = document.getElementById("output");
+/* ===============================
+   PromptMint – Generate Engine
+   =============================== */
 
-  if (!idea) {
-    output.innerText = "❌ Please describe what you want to generate.";
-    return;
+/* ---------- Schema ---------- */
+function createEmptyPrompt() {
+  return {
+    subject: [],
+    environment: [],
+    action: [],
+    style: [],
+    lighting: [],
+    technical: [],
+    negative: []
+  };
+}
+
+/* ---------- Templates ---------- */
+const TEMPLATES = {
+  midjourney: (p) =>
+    `${p.subject}, ${p.action}, ${p.environment}, ${p.style}, ${p.lighting}, ${p.technical} --v 6 --quality 2`,
+
+  stableDiffusion: (p) =>
+    `${p.subject}, ${p.style}, ${p.lighting}, ${p.environment}, ultra detailed`
+};
+
+/* ---------- Style presets ---------- */
+const PRESETS = {
+  cinematic: {
+    style: ["cinematic", "dramatic composition"],
+    lighting: ["moody lighting", "soft shadows"],
+    technical: ["film grain", "35mm look"]
+  },
+  anime: {
+    style: ["anime style", "clean line art"],
+    lighting: ["soft ambient light"],
+    technical: ["high saturation"]
+  },
+  studio: {
+    style: ["professional photography"],
+    lighting: ["studio lighting"],
+    technical: ["sharp focus"]
+  }
+};
+
+/* ---------- Defaults ---------- */
+function applyDefaults(prompt) {
+  if (!prompt.environment.length) {
+    prompt.environment.push("minimal background");
   }
 
-  const qualityModifiers = [
-    "ultra-detailed",
-    "high resolution",
-    "cinematic lighting",
-    "professional composition",
-    "sharp focus",
-    "dramatic shadows",
-    "soft ambient light",
-    "realistic textures",
-    "studio quality",
-    "8k quality"
-  ];
-
-  const styles = [
-    "photorealistic",
-    "digital art",
-    "concept art",
-    "cinematic scene",
-    "hyper-realistic",
-    "stylized illustration"
-  ];
-
-  function pickRandom(arr, count = 3) {
-    return arr.sort(() => 0.5 - Math.random()).slice(0, count).join(", ");
+  if (!prompt.lighting.length) {
+    prompt.lighting.push("soft studio lighting");
   }
 
-  let prompt = "";
+  prompt.negative.push(
+    "extra fingers",
+    "bad anatomy",
+    "distortion",
+    "watermark"
+  );
+}
 
-  // LOGO PROMPTS
-  if (idea.includes("logo")) {
-    prompt = `
-Minimalist logo design for ${idea.replace("logo", "")},
-clean vector style, flat design,
-strong branding, modern typography,
-high contrast, scalable, professional brand identity
-    `;
+/* ---------- Generate ---------- */
+function generatePrompt(options) {
+  const p = createEmptyPrompt();
+
+  p.subject.push(options.subject || "a detailed subject");
+  p.action.push(options.action || "natural pose");
+
+  if (PRESETS[options.preset]) {
+    const preset = PRESETS[options.preset];
+    p.style.push(...(preset.style || []));
+    p.lighting.push(...(preset.lighting || []));
+    p.technical.push(...(preset.technical || []));
   }
 
-  // PORTRAIT PROMPTS
-  else if (idea.includes("portrait") || idea.includes("face")) {
-    prompt = `
-${pickRandom(styles)}, portrait of ${idea},
-detailed facial features, natural skin tones,
-soft lighting, depth of field,
-professional photography, studio background
-    `;
-  }
+  applyDefaults(p);
 
-  // ANIME PROMPTS
-  else if (idea.includes("anime")) {
-    prompt = `
-Anime-style illustration of ${idea},
-vibrant colors, expressive eyes,
-clean line art, dynamic pose,
-high detail, modern anime aesthetics
-    `;
-  }
+  const model = options.model || "midjourney";
+  return TEMPLATES[model](p);
+}
 
-  // LANDSCAPE PROMPTS
-  else if (idea.includes("landscape") || idea.includes("mountain") || idea.includes("city")) {
-    prompt = `
-Wide-angle landscape of ${idea},
-epic scale, atmospheric depth,
-dramatic sky, natural lighting,
-high realism, cinematic environment design
-    `;
-  }
+/* ---------- Button hook ---------- */
+document.getElementById("generateBtn")?.addEventListener("click", () => {
+  const subject = document.getElementById("subjectInput").value;
+  const preset = document.getElementById("stylePreset")?.value || "cinematic";
+  const model = document.getElementById("modelSelect")?.value || "midjourney";
 
-  // PRODUCT PROMPTS
-  else if (idea.includes("product")) {
-    prompt = `
-Professional product photography of ${idea},
-studio lighting, clean background,
-sharp details, commercial quality,
-perfect reflections, marketing ready
-    `;
-  }
+  const result = generatePrompt({
+    subject,
+    preset,
+    model
+  });
 
-  // DEFAULT SMART PROMPT
-  else {
-    prompt = `
-${pickRandom(styles)} depiction of ${idea},
-${pickRandom(qualityModifiers, 4)},
-balanced composition, visually striking,
-high quality, trending art style
-    `;
-  }
-
-  output.innerText = prompt.trim();
+  document.getElementById("outputPrompt").value = result;
 });
