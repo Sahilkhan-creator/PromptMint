@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PromptMint – Creative Prompts Generator</title>
+  <title>Generate Prompt – PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -37,45 +37,25 @@
 </div>
 
 <main class="hero">
-  <h2>Generate and Fix Creative Prompts Instantly</h2>
-  <p>Use PromptMint to create AI-ready prompts or improve your existing ones — free or with subscription!</p>
+  <h2>Generate Your Creative Prompt</h2>
+  <p>Type your idea and get a ready-to-use prompt for AI, writing, or design.</p>
 
-  <div class="hero-buttons">
-    <a href="generate.html" class="btn primary">Generate Prompt</a>
-    <a href="fix.html" class="btn secondary">Fix Prompt</a>
+  <div class="prompt-input">
+    <textarea id="userInput" placeholder="Type your idea here..."></textarea>
+    <button id="generateBtn" class="btn primary">Generate Prompt</button>
+  </div>
+
+  <div class="prompt-output">
+    <h3>Generated Prompt:</h3>
+    <p id="output">Your prompt will appear here.</p>
   </div>
 </main>
-
-<!-- Content Sections -->
-<section class="content">
-  <h3>Why Choose PromptMint?</h3>
-  <p>PromptMint offers a simple, fast, and creative way to generate prompts for AI, writing, and design.</p>
-</section>
-
-<section class="content">
-  <h3>Free & Subscription Plans</h3>
-  <p>Free users get 25 credits. Earn more credits by watching ads or choose subscription for unlimited access.</p>
-</section>
-
-<section class="content">
-  <h3>Generate Prompts for Multiple Purposes</h3>
-  <p>Whether it's AI art, content creation, or brainstorming, PromptMint generates prompts tailored for your need.</p>
-</section>
-
-<section class="content">
-  <h3>Fix Your Prompts</h3>
-  <p>Improve clarity, grammar, and creativity of your existing prompts to get the best AI results.</p>
-</section>
-
-<section class="content">
-  <h3>Get Started Today</h3>
-  <p>Sign up, use your free credits, and explore the power of PromptMint!</p>
-</section>
 
 <footer>
   <p>© 2025 PromptMint. All rights reserved.</p>
 </footer>
 
 <script src="js/index.js"></script>
+<script src="js/generate.js"></script>
 </body>
 </html>
