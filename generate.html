@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generate Prompt – PromptMint</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generate Prompt | PromptMint</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="topbar">
   <h1 class="logo">PromptMint</h1>
-  <div class="header-buttons">
-    <span class="hamburger" id="hamburger">&#9776;</span>
-    <span class="profile-icon" id="profileIcon">&#128100;</span>
+
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
   </div>
 </header>
 
@@ -24,36 +25,26 @@
     <li><a href="generate.html">Generate Prompt</a></li>
     <li><a href="fix.html">Fix Prompt</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
 </div>
 
-<!-- Profile Panel -->
-<div class="profile-panel" id="profilePanel">
-  <p><strong>User:</strong> Demo User</p>
-  <p><strong>Credits:</strong> 25</p>
-  <p><strong>Email:</strong> demo@example.com</p>
-</div>
+<main class="tool-page">
+  <h2>AI Prompt Generator</h2>
+  <p>Create high-quality prompts for AI tools like ChatGPT, Midjourney, DALL·E.</p>
 
-<main class="hero">
-  <h2>Generate Creative Prompts</h2>
-  <p>Type your idea and let PromptMint generate AI-ready prompts instantly.</p>
+  <textarea
+    id="generateInput"
+    placeholder="Example: A cinematic cyberpunk city at night..."
+  ></textarea>
 
-  <div class="prompt-form">
-    <textarea id="generateInput" placeholder="Describe what you want to generate..."></textarea>
+  <button id="generateBtn" class="primary-btn">
+    Generate Prompt
+  </button>
 
-<button id="generateBtn">Generate Prompt</button>
-
-<div id="output"></div>
-    
-  </div>
+  <div id="output" class="output-box"></div>
 </main>
 
-<footer>
-  <p>© 2025 PromptMint. All rights reserved.</p>
-</footer>
-
+<script src="js/index.js"></script>
 <script src="js/generate.js"></script>
 </body>
-</html>
+</html>￼Enter
