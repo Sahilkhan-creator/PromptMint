@@ -1,25 +1,28 @@
-// Sidebar
+// Sidebar toggle
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 const closeSidebar = document.getElementById('closeSidebar');
 
 hamburger.addEventListener('click', () => {
-  sidebar.classList.add('active');
+    sidebar.classList.add('active');
 });
 
 closeSidebar.addEventListener('click', () => {
-  sidebar.classList.remove('active');
+    sidebar.classList.remove('active');
 });
 
-// Profile
+// Profile panel toggle
 const profileIcon = document.getElementById('profileIcon');
 const profilePanel = document.getElementById('profilePanel');
 
 profileIcon.addEventListener('click', () => {
-  profilePanel.style.display = profilePanel.style.display === 'block' ? 'none' : 'block';
+    profilePanel.classList.toggle('active');
 });
 
-// Close sidebar if click outside
-window.addEventListener('click', (e) => {
-  if (e.target === sidebar) sidebar.classList.remove('active');
+// Ensure buttons always navigate (fix JS interference)
+document.querySelectorAll('.hero-buttons a').forEach(btn => {
+    btn.addEventListener('click', e => {
+        // Remove preventDefault if present
+        window.location.href = btn.getAttribute('href');
+    });
 });
