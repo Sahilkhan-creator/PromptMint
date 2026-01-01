@@ -279,3 +279,66 @@ footer {
   font-size: 0.95rem;
   line-height: 1.6;
   }
+/* ===== GLOBAL ===== */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f6fa;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* ===== CONTAINER ===== */
+.page {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ===== INPUTS ===== */
+textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== OUTPUT ===== */
+#genOutput, #fixOutput {
+  background: #111827;
+  color: #e5e7eb;
+  min-height: 140px;
+}
+
+/* ===== LOADING ===== */
+.loading {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6366f1;
+}
+.loading.active {
+  display: block;
+  }
