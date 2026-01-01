@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fix Prompt | PromptMint</title>
+  <meta charset="UTF-8">
+  <title>Fix AI Prompt | PromptMint</title>
+  <meta name="description" content="Fix and enhance weak AI prompts into professional-quality prompts.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topbar">
+<!-- HEADER -->
+<header class="top-bar">
+  <button id="menuBtn" class="menu-icon">☰</button>
   <h1 class="logo">PromptMint</h1>
-
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
+  <button id="profileBtn" class="profile-icon">👤</button>
 </header>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <button class="close-btn" id="closeSidebar">&times;</button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="generate.html">Generate Prompt</a></li>
-    <li><a href="fix.html">Fix Prompt</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-  </ul>
-</div>
+<!-- MAIN -->
+<main class="tool-container">
 
-<main class="tool-page">
-  <h2>Fix & Improve Prompt</h2>
-  <p>Optimize your existing AI prompt for better results.</p>
+  <h2>AI Prompt Fixer</h2>
+  <p class="tool-desc">
+    Improve weak or messy prompts into clean, structured, professional AI prompts.
+    We fix lighting, style, clarity, and remove conflicts automatically.
+  </p>
 
-  <textarea
-    id="fixInput"
-    placeholder="Paste your prompt here..."
-  ></textarea>
+  <!-- INPUT -->
+  <label>Paste your prompt</label>
+  <textarea id="fixInput" placeholder="Example: girl photo city anime realistic good lighting"></textarea>
 
+  <!-- OPTIONS -->
+  <div class="options-grid">
+    <div>
+      <label>Mode</label>
+      <select id="fixMode">
+        <option value="normal">Normal</option>
+        <option value="strict">Strict (clean & short)</option>
+        <option value="creative">Creative (more style)</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Target Model</label>
+      <select id="fixModel">
+        <option value="midjourney">Midjourney</option>
+        <option value="stable">Stable Diffusion</option>
+        <option value="dalle">DALL·E</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- BUTTON -->
   <button id="fixBtn" class="primary-btn">
     Fix Prompt
   </button>
 
-  <div id="outputFix" class="output-box"></div>
+  <!-- LOADING -->
+  <div id="fixLoading" class="loading hidden">
+    Fixing and optimizing prompt...
+  </div>
+
+  <!-- OUTPUT -->
+  <label>Fixed Prompt</label>
+  <textarea id="fixOutput" readonly placeholder="Your improved prompt will appear here..."></textarea>
+
 </main>
 
+<!-- SEO CONTENT -->
+<section class="seo-content">
+  <h3>How Prompt Fixing Works</h3>
+  <p>
+    PromptMint analyzes your prompt, detects missing elements like lighting,
+    environment, and style, removes conflicts, and rebuilds it into a clean,
+    high-quality AI prompt.
+  </p>
+</section>
+
+<!-- SCRIPTS -->
 <script src="js/index.js"></script>
 <script src="js/fix.js"></script>
+
 </body>
-</html>￼Enter
+  </html>
